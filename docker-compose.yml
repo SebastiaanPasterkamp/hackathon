@@ -30,3 +30,22 @@ services:
         depends_on:
             rabbitmq:
                 condition: service_healthy
+
+    attach:
+        build:
+            context: .
+            args:
+                PROJECT: attach
+        environment:
+            PORT: 8080
+            RABBITMQ: amqp://guest:guest@rabbitmq:5672/
+        volumes:
+            - ./attach/data/:/go/data/:ro
+        healthcheck:
+            test: curl localhost:8080/readiness
+            interval: 30s
+            timeout: 30s
+            retries: 3
+        depends_on:
+            rabbitmq:
+                condition: service_healthy

@@ -1,0 +1,36 @@
+{
+    "name": "slow-but-steady",
+    "slip": [
+        {
+            "queue": "delay",
+            "arguments": {
+                "duration": "500ms"
+            }
+        },
+        {
+            "queue": "attach",
+            "on_error": {
+                "max_retries": 3
+            }
+        },
+        {
+            "queue": "delay",
+            "arguments": {
+                "duration": "750ms"
+            }
+        },
+        {
+            "queue": "checksum",
+            "on_error": {
+                "max_retries": 3,
+                "rewind": 2
+            }
+        },
+        {
+            "queue": "delay",
+            "arguments": {
+                "duration": "250ms"
+            }
+        }
+    ]
+}

@@ -1,0 +1,63 @@
+{
+    "name": "slow-and-risky",
+    "slip": [
+        {
+            "queue": "delay",
+            "arguments": {
+                "duration": "500ms"
+            }
+        },
+        {
+            "queue": "unstable",
+            "arguments": {
+                "error_rate": 0.1
+            },
+            "on_error": {
+                "max_retries": 3
+            }
+        },
+        {
+            "queue": "attach",
+            "on_error": {
+                "max_retries": 3
+            }
+        },
+        {
+            "queue": "delay",
+            "arguments": {
+                "duration": "750ms"
+            }
+        },
+        {
+            "queue": "unstable",
+            "arguments": {
+                "error_rate": 0.1
+            },
+            "on_error": {
+                "max_retries": 3
+            }
+        },
+        {
+            "queue": "checksum",
+            "on_error": {
+                "max_retries": 3,
+                "rewind": 3
+            }
+        },
+        {
+            "queue": "unstable",
+            "arguments": {
+                "error_rate": 0.1
+            },
+            "on_error": {
+                "max_retries": 3
+            }
+        },
+        {
+            "queue": "delay",
+            "arguments": {
+                "duration": "250ms"
+            }
+        }
+    ]
+}

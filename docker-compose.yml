@@ -1,0 +1,32 @@
+version: '2'
+services:
+    rabbitmq:
+        image: rabbitmq:3-management
+        hostname: rabbitmq
+        ports:
+        - 15672:15672
+        - 5672:5672
+        healthcheck:
+            test: rabbitmq-diagnostics -q ping
+            interval: 30s
+            timeout: 30s
+            retries: 3
+
+    postoffice:
+        build:
+            context: .
+            args:
+                PROJECT: postoffice
+        environment:
+            PORT: 8080
+            RABBITMQ: amqp://guest:guest@rabbitmq:5672/
+        volumes:
+            - ./postoffice/data/:/go/data/:ro
+        healthcheck:
+            test: curl localhost:8080/readiness
+            interval: 30s
+            timeout: 30s
+            retries: 3
+        depends_on:
+            rabbitmq:
+                condition: service_healthy

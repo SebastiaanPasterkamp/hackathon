@@ -66,3 +66,20 @@ services:
         depends_on:
             rabbitmq:
                 condition: service_healthy
+
+    delay:
+        build:
+            context: .
+            args:
+                PROJECT: delay
+        environment:
+            PORT: 8080
+            RABBITMQ: amqp://guest:guest@rabbitmq:5672/
+        healthcheck:
+            test: curl localhost:8080/readiness
+            interval: 30s
+            timeout: 30s
+            retries: 3
+        depends_on:
+            rabbitmq:
+                condition: service_healthy

@@ -12,6 +12,18 @@ services:
             timeout: 30s
             retries: 3
 
+    producer:
+        build:
+            context: .
+            args:
+                PROJECT: producer
+        environment:
+            RABBITMQ: amqp://guest:guest@rabbitmq:5672/
+        command: ["--total", "100"]
+        depends_on:
+            rabbitmq:
+                condition: service_healthy
+
     postoffice:
         build:
             context: .

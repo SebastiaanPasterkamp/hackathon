@@ -2,6 +2,8 @@ github.com/SebastiaanPasterkamp/gonyexpress v1.1.1 h1:/TeTWqMxpzdpeVzCbwrVOOdwZC
 github.com/SebastiaanPasterkamp/gonyexpress v1.1.1/go.mod h1:NwFn3i/cvnn0/NJ1T+tm7IO5ykzlTlOa2Wzm2lyWnvM=
 github.com/SebastiaanPasterkamp/gonyexpress v1.1.2 h1:tFXiNJDF5v8g9JRyq0HGlbObJ+qKZZQmR6TDfQw22xY=
 github.com/SebastiaanPasterkamp/gonyexpress v1.1.2/go.mod h1:NwFn3i/cvnn0/NJ1T+tm7IO5ykzlTlOa2Wzm2lyWnvM=
+github.com/SebastiaanPasterkamp/gonyexpress v1.1.3 h1:khJABP0MLWKY3egKqHc/6Xq/L6oF7uyRkVASd8NboPA=
+github.com/SebastiaanPasterkamp/gonyexpress v1.1.3/go.mod h1:NwFn3i/cvnn0/NJ1T+tm7IO5ykzlTlOa2Wzm2lyWnvM=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

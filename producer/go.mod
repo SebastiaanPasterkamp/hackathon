@@ -3,7 +3,7 @@ module producer
 go 1.13
 
 require (
-	github.com/SebastiaanPasterkamp/gonyexpress v1.1.2
+	github.com/SebastiaanPasterkamp/gonyexpress v1.1.3
 	github.com/kr/pretty v0.1.0 // indirect
 	github.com/sirupsen/logrus v1.8.1
 	github.com/stretchr/testify v1.4.0 // indirect

@@ -1,6 +1,6 @@
 module producer
 
-go 1.13
+go 1.19
 
 require (
 	github.com/SebastiaanPasterkamp/gonyexpress v1.1.3

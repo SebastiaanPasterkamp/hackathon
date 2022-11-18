@@ -1,6 +1,6 @@
 module attach
 
-go 1.13
+go 1.19
 
 require (
 	github.com/SebastiaanPasterkamp/gobernate v1.2.2
